@@ -1,0 +1,18 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "route": "^0.2.5",
+    "routes": "^2.1.0",
+    "busboy": "^0.2.13",
+    "remove": "^0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
