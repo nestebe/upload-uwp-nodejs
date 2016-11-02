@@ -14,8 +14,8 @@ router.addRoute('/upload', function (req, res, params) {
 
 		// Listen for event when Busboy finds a file to stream.
 		busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
-		     var saveTo =path.join("data",path.basename(fieldname));
-      file.pipe(fs.createWriteStream(saveTo));
+			var saveTo = path.join("data", path.basename(filename));
+			file.pipe(fs.createWriteStream(saveTo));
 			// We are streaming! Handle chunks
 			file.on('data', function (data) {
 				// Here we can act on the data chunks streamed.
@@ -23,7 +23,7 @@ router.addRoute('/upload', function (req, res, params) {
 
 			// Completed streaming the file.
 			file.on('end', function () {
-				console.log('Finished with ' + fieldname);
+				console.log('Finished with ' + filename);
 			});
 		});
 
